@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 public class MainMenu extends AppCompatActivity {
 
+    //TODO Add UI
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -8,4 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--TODO Add dark theme to app, use theme editor (Tools drop down menu-->
+
 </resources>
