@@ -27,12 +27,12 @@ public interface AssignmentDao {
     @Delete
     void delHw(Assignment...assignments);
 
-    @Query("DELETE FROM hw")
+    @Query("DELETE FROM assignment")
     void nukeTable();
 
-    @Query("SELECT * FROM hw")
+    @Query("SELECT * FROM assignment")
     List<Assignment> getAll();
 
-    @Query("SELECT * FROM hw WHERE classId =:classId")
+    @Query("SELECT * FROM assignment WHERE classId =:classId")
     List<Assignment> getAllForClass(Class c);
 }

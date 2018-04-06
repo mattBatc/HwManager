@@ -21,7 +21,7 @@ public interface ClassDao {
     void updateClass(Class...classes);
 
     @Query("SELECT * FROM class")
-    List<Class> getClasses();
+    List <Class> getClasses();
 
     @Query("DELETE FROM class")
     void nukeTable();

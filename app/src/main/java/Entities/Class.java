@@ -11,17 +11,17 @@ import android.arch.persistence.room.PrimaryKey;
 public class Class {
 
     @PrimaryKey(autoGenerate = true)
-    int classId;
+    int id;
 
     @ColumnInfo(name = "class_name")
     String className;
 
-    public int getClassId() {
-        return classId;
+    public int getId() {
+        return id;
     }
 
-    public void setClassId(int classId) {
-        this.classId = classId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getClassName() {

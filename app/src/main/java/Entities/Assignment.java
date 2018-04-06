@@ -23,7 +23,7 @@ public class Assignment {
     @ColumnInfo(name = "asgn_name")
     String name;
 
-    @ColumnInfo(name = "Due Date")
+    //@ColumnInfo(name = "Due Date")
     Date date;
 
     @ColumnInfo(name = "classId")

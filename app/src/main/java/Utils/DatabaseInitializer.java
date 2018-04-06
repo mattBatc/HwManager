@@ -56,6 +56,7 @@ public class DatabaseInitializer {
     //Method to get all homework for class
 
     public List<Assignment> hwForClass(@NonNull AppDatabase db, Class c){
+        //int id = c.getId
         List<Assignment> hw = db.assignmentDao().getAllForClass(c);
         Log.d(TAG,"Returned assignments for class: " + c.getName()+" Size: " +hw.size());
         return hw;
