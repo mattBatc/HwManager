@@ -8,6 +8,7 @@ import java.util.List;
 
 
 import Entities.Assignment;
+import Entities.Group;
 
 /**
  * Created by Matt on 4/6/2018.
@@ -38,27 +39,27 @@ public class DatabaseInitializer {
         return hw;
     }
 
-    //Method to get Class List
+    //Method to get Group List
 
-    public List<Class> getClassList(@NonNull AppDatabase db) {
-        List<Class> classes = db.classDao().getClasses();
-        Log.d(TAG, "Returned Class list with size of: " + classes.size());
-        return classes;
+    public List<Group> getGroupList(@NonNull AppDatabase db) {
+        List<Group> groups = db.groupDao().getGroups();
+        Log.d(TAG, "Returned Group list with size of: " + groups.size());
+        return groups;
     }
 
-    //Method to add a class
+    //Method to add a groups
 
-    public void addClass(@NonNull AppDatabase db, Class c) {
-        db.classDao().insertClass(c);
-        Log.d(TAG, "Added " + c.getName() + " Class");
+    public void addGroup(@NonNull AppDatabase db, Group c) {
+        db.groupDao().insertGroup(c);
+        Log.d(TAG, "Added " + c.getGroupName() + " Group");
     }
 
-    //Method to get all homework for class
+    //Method to get all homework for group
 
-    public List<Assignment> hwForClass(@NonNull AppDatabase db, Class c){
-        //int id = c.getId
-        List<Assignment> hw = db.assignmentDao().getAllForClass(c);
-        Log.d(TAG,"Returned assignments for class: " + c.getName()+" Size: " +hw.size());
+    public List<Assignment> hwForGroup(@NonNull AppDatabase db, Group x){
+        int id = x.getGroupId();
+        List<Assignment> hw = db.assignmentDao().getAllForGroup(id);
+        Log.d(TAG,"Returned assignments for group: " + x.getGroupName()+" Size: " +hw.size());
         return hw;
     }
 
@@ -69,11 +70,11 @@ public class DatabaseInitializer {
         Log.d(TAG,"Nuked Hw List");
     }
 
-    //Method to clear the Class List
+    //Method to clear the Group List
 
-    public void nukeClassList(@NonNull AppDatabase db){
-        db.classDao().nukeTable();
-        Log.d(TAG,"Nuked Class List");
+    public void nukeGroupList(@NonNull AppDatabase db){
+        db.groupDao().nukeTable();
+        Log.d(TAG,"Nuked Group List");
     }
 
     private static class PopulateDbAsync extends AsyncTask<Void, Void, Void> {

@@ -8,22 +8,24 @@ import android.arch.persistence.room.Update;
 
 import java.util.List;
 
+import Entities.Group;
+
 /**
  * Created by Matt on 4/6/2018.
  */
 @Dao
-public interface ClassDao {
+public interface GroupDao {
 
     @Insert
-    void insertClass(Class...classes);
+    void insertGroup(Group...groups);
 
     @Update
-    void updateClass(Class...classes);
+    void updateGroup(Group...groups);
 
-    @Query("SELECT * FROM class")
-    List <Class> getClasses();
+    @Query("SELECT * FROM groups")
+    List <Group> getGroups();
 
-    @Query("DELETE FROM class")
+    @Query("DELETE FROM groups")
     void nukeTable();
 
 }

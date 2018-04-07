@@ -4,19 +4,22 @@ import android.arch.persistence.room.*;
 import android.content.Context;
 
 import DAOs.AssignmentDao;
+import DAOs.GroupDao;
 import Entities.*;
-import Entities.Class;
-import DAOs.ClassDao;
+import Entities.Group;
+import DAOs.GroupDao;
 
 /**
  * Created by Matt on 4/4/2018.
  */
 
-@Database(entities = {Class.class,Assignment.class},version = 1,exportSchema = false)
+@Database(entities = {Group.class,Assignment.class},version = 1,exportSchema = false)
+
 public abstract class AppDatabase extends RoomDatabase {
+
     private static AppDatabase INSTANCE;
 
-    public abstract ClassDao classDao();
+    public abstract GroupDao groupDao();
     public abstract AssignmentDao assignmentDao();
 
     public static AppDatabase getDatabase(Context context){

@@ -33,6 +33,6 @@ public interface AssignmentDao {
     @Query("SELECT * FROM assignment")
     List<Assignment> getAll();
 
-    @Query("SELECT * FROM assignment WHERE classId =:classId")
-    List<Assignment> getAllForClass(Class c);
+    @Query("SELECT * FROM assignment WHERE groupId =:groupId")
+    List<Assignment> getAllForGroup(int groupId);
 }

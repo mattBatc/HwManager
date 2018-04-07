@@ -13,7 +13,7 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
  * Created by Matt on 4/4/2018.
  */
 
-@Entity(foreignKeys = @ForeignKey(entity = Class.class, parentColumns = "classId", childColumns = "classId", onDelete = CASCADE))
+@Entity(foreignKeys = @ForeignKey(entity = Group.class, parentColumns = "groupId", childColumns = "groupId", onDelete = CASCADE))
 
 public class Assignment {
 
@@ -23,11 +23,8 @@ public class Assignment {
     @ColumnInfo(name = "asgn_name")
     String name;
 
-    //@ColumnInfo(name = "Due Date")
-    Date date;
-
-    @ColumnInfo(name = "classId")
-    int classId;
+    @ColumnInfo(name = "groupId")
+    int groupId;
 
     public int getId() {
         return id;
@@ -45,20 +42,12 @@ public class Assignment {
         this.name = name;
     }
 
-    public Date getDate() {
-        return date;
+    public int getGroupId() {
+        return groupId;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public int getClassId() {
-        return classId;
-    }
-
-    public void setClassId(int classId) {
-        this.classId = classId;
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
     }
 }
 
